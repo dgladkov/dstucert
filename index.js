@@ -147,7 +147,7 @@ var Certificate = asn.define('Certificate', function() {
  */
 var TBSCertificate = asn.define('TBSCertificate', function() {
   this.seq().obj(
-    this.key('version').explicit(0).use(Version),
+    this.key('version').def('v3').explicit(0).use(Version),
     this.key('serialNumber').use(CertificateSerialNumber),
     this.key('signature').use(AlgorithmIdentifier),
     this.key('issuer').use(Name),
@@ -164,7 +164,7 @@ var TBSCertificate = asn.define('TBSCertificate', function() {
   Version ::= INTEGER {v3 (2)}
  */
 var Version = asn.define('Version', function() {
-  this.def('v3').int({
+  this.int({
     0: 'v1',
     1: 'v2',
     2: 'v3'
