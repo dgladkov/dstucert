@@ -1,4 +1,5 @@
 var asn = require('asn1.js');
+var buffer = require('buffer');
 
 var ALGORITHM_OIDS = {
   '1 2 804 2 1 1 1 1 2 1': 'Gost34311',
@@ -315,7 +316,8 @@ module.exports = {
   encode: function(obj) {
     return Certificate.encode(obj, 'der');
   },
-  decode: function(bin) {
-    return Certificate.decode(bin, 'der');
+  decode: function(input) {
+    var buf = Buffer.isBuffer(input) ? input : Buffer.from(input);
+    return Certificate.decode(buf, 'der');
   },
 }

@@ -8,7 +8,8 @@
   "author": "Dmitry Gladkov <dmitry.gladkov@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "asn1.js": "^4.9.1"
+    "asn1.js": "^4.9.1",
+    "buffer": "^5.0.7"
   },
   "devDependencies": {},
   "description": "DSTU Certificate decoder/encoder",
