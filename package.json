@@ -1,0 +1,23 @@
+{
+  "name": "dstucert",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dmitry Gladkov <dmitry.gladkov@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "asn1.js": "^4.9.1"
+  },
+  "devDependencies": {},
+  "description": "DSTU Certificate decoder/encoder",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dgladkov/dstucert.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dgladkov/dstucert/issues"
+  },
+  "homepage": "https://github.com/dgladkov/dstucert#readme"
+}
