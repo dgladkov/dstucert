@@ -1,5 +1,5 @@
 var asn = require('asn1.js');
-var buffer = require('buffer');
+var buffer = require('buffer').Buffer;
 
 var ALGORITHM_OIDS = {
   '1 2 804 2 1 1 1 1 2 1': 'Gost34311',
