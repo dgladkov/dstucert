@@ -12,6 +12,7 @@
     "buffer": "^5.0.7"
   },
   "devDependencies": {
+    "bn.js": "^4.11.8",
     "tape": "^4.8.0"
   },
   "description": "DSTU Certificate decoder/encoder",
