@@ -1,5 +1,6 @@
 var asn = require('asn1.js');
 var buffer = require('buffer').Buffer;
+var x520 = require('./x520.js');
 
 var ALGORITHM_OIDS = {
   '1 2 804 2 1 1 1 1 2 1': 'Gost34311',
@@ -225,7 +226,9 @@ var RelativeDistinguishedName = asn.define('RelativeDistinguishedName', function
 var AttributeTypeAndValue = asn.define('AttributeTypeAndValue', function() {
   this.seq().obj(
     this.key('type').use(AttributeType),
-    this.key('value').use(AttributeValue)
+    this.key('value').use(function(obj) {
+      return x520[obj.type] || AttributeValue;
+    })
   );
 });
 
@@ -239,8 +242,10 @@ var AttributeType = asn.define('AttributeType', function() {
 
 /*
   AttributeValue::= ANY DEFINED BY AttributeType
+  -- DEFINED BY AttributeType
  */
 var AttributeValue = asn.define('AttributeValue', function() {
+  console.log(arguments)
   this.any();
 });
 
